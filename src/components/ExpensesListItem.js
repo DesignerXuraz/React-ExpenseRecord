@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import moment from "moment";
 //import { removeExpenses } from "../actions/expensesActions"; dlt btn thiyo
 const ExpensesListItem = ({ id, description, amount, note, createdAt }) => {
   return (
@@ -11,7 +11,7 @@ const ExpensesListItem = ({ id, description, amount, note, createdAt }) => {
       </Link>
       <p>{`amount: ${amount}`}</p>
       <p>{`note: ${note}`}</p>
-      <p>{`createdAt: ${createdAt}`}</p>
+      {moment(createdAt).format("MMMM Do, YYYY")}
     </Fragment>
   );
 };
